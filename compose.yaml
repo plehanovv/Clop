@@ -1,0 +1,6 @@
+﻿services:
+  clop.api:
+    image: clop.api
+    build:
+      context: .
+      dockerfile: Clop.Api/Dockerfile
