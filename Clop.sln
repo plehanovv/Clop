@@ -10,6 +10,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clop.Domain", "Clop.Domain\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clop.DAL", "Clop.DAL\Clop.DAL.csproj", "{75AAFCBF-5C12-4F21-BED0-8E7DDC056D94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clop.Api", "Clop.Api\Clop.Api.csproj", "{EC26FA1E-F331-436B-BF43-5DB875CC3A06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3A105EE1-4E78-4CB5-BF29-7836441CD7DC}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +25,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3472AA0B-BF43-444B-95EB-EF82687D44F9} = {47F21361-0D9B-4DA1-A1BC-03D240C1F7A8}
 		{75AAFCBF-5C12-4F21-BED0-8E7DDC056D94} = {70F71461-0A2B-4990-ABC6-95A0876D6D36}
+		{EC26FA1E-F331-436B-BF43-5DB875CC3A06} = {DC5AF52D-7CC8-419C-B150-7E0F562CDE91}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3472AA0B-BF43-444B-95EB-EF82687D44F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -28,5 +36,9 @@ Global
 		{75AAFCBF-5C12-4F21-BED0-8E7DDC056D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75AAFCBF-5C12-4F21-BED0-8E7DDC056D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75AAFCBF-5C12-4F21-BED0-8E7DDC056D94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC26FA1E-F331-436B-BF43-5DB875CC3A06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC26FA1E-F331-436B-BF43-5DB875CC3A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC26FA1E-F331-436B-BF43-5DB875CC3A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC26FA1E-F331-436B-BF43-5DB875CC3A06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
