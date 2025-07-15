@@ -19,7 +19,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                 Id = 1,
                 Login = "Test user1",
                 Password = "hugdfgfdgdfu87gf7$#dfgddfg$g7ggf",
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = new DateTime(2025, 1, 1, 0, 0, 0, DateTimeKind.Utc),
             }
         });
     }
