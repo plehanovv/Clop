@@ -3,6 +3,7 @@ using Clop.Domain.Entity;
 using Clop.Domain.Interfaces.Repositories;
 using Clop.Domain.Interfaces.Services;
 using Clop.Domain.Result;
+using Microsoft.EntityFrameworkCore;
 
 namespace Clop.Application.Services;
 
@@ -15,8 +16,14 @@ public class UserService : IUserService
         _userRepository = userRepository;
     }
     
-    public Task<BaseResult<UserDto>> GetUsersAsync()
+    public async Task<BaseResult<UserDto>> GetUsersAsync()
     {
+        var user = _userRepository.GetAll().FirstOrDefaultAsync();
+        
+        var userWithInclude = _userRepository.GetAll()
+            .Include(user => user.Profile)
+            .FirstOrDefaultAsync();
+
         throw new NotImplementedException();
     }
 }
