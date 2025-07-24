@@ -10,6 +10,8 @@ public class User : IAuditable, IEntityId<long>
     
     public string Password { get; set; }
     
+    public Profile Profile { get; set; }
+    
     public DateTime CreatedAt { get; set; }
     
     public DateTime? UpdatedAt { get; set; }
