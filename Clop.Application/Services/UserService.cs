@@ -18,11 +18,9 @@ public class UserService : IUserService
     
     public async Task<BaseResult<UserDto>> GetUsersAsync()
     {
-        var user = _userRepository.GetAll().FirstOrDefaultAsync();
-        
-        // var userWithInclude = _userRepository.GetAll()
-        //     .Include(user => user.Profile)
-        //     .FirstOrDefaultAsync();
+        var user = await _userRepository.GetAll().FirstOrDefaultAsync();
+
+        var profiles = user.Profiles;
 
         throw new NotImplementedException();
     }
