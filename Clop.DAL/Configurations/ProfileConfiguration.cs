@@ -12,12 +12,22 @@ public class ProfileConfiguration : IEntityTypeConfiguration<Profile>
         builder.Property(x => x.Address).HasMaxLength(300).IsRequired();
         builder.Property(x => x.Age).HasMaxLength(100).IsRequired();
 
-        builder.HasData(new Profile()
+        builder.HasData(new List<Profile>()
         {
-            Id = 1,
-            Age = 32,
-            Address = "Puskina 43",
+            new Profile()
+            {
+                Id = 1,
+                Age = 32,
+                Address = "Puskina 43",
+                UserId = 1,
+            },
+            new Profile()
+            {
+            Id = 2,
+            Age = 31,
+            Address = "Kukushkina 43",
             UserId = 1,
+            }
         });
     }
 }

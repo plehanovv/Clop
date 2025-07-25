@@ -20,9 +20,9 @@ public class UserService : IUserService
     {
         var user = _userRepository.GetAll().FirstOrDefaultAsync();
         
-        var userWithInclude = _userRepository.GetAll()
-            .Include(user => user.Profile)
-            .FirstOrDefaultAsync();
+        // var userWithInclude = _userRepository.GetAll()
+        //     .Include(user => user.Profile)
+        //     .FirstOrDefaultAsync();
 
         throw new NotImplementedException();
     }
