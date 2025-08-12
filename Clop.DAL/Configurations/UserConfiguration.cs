@@ -11,6 +11,11 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x => x.Id).ValueGeneratedOnAdd();
         builder.Property(x => x.Login).HasMaxLength(100).IsRequired();
         builder.Property(x => x.Password).IsRequired();
+        
+        builder.HasMany(x => x.Profiles)
+            .WithOne(x => x.User)
+            .HasForeignKey(x => x.UserId)
+            .HasPrincipalKey(x => x.Id);
 
         builder.HasData(new List<User>()
         {

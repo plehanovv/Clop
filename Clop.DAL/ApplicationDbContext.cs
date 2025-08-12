@@ -1,4 +1,5 @@
 using System.Reflection;
+using Clop.DAL.Interceptors;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -13,6 +14,7 @@ public class ApplicationDbContext : DbContext
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        optionsBuilder.AddInterceptors(new UpdateEntityInterceptor());
         optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
     }
 

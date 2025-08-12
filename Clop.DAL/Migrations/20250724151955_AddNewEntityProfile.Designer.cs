@@ -3,6 +3,7 @@ using System;
 using Clop.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Clop.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250724151955_AddNewEntityProfile")]
+    partial class AddNewEntityProfile
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,7 +47,8 @@ namespace Clop.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Profile");
 
@@ -54,13 +58,6 @@ namespace Clop.DAL.Migrations
                             Id = 1L,
                             Address = "Puskina 43",
                             Age = 32,
-                            UserId = 1L
-                        },
-                        new
-                        {
-                            Id = 2L,
-                            Address = "Kukushkina 43",
-                            Age = 31,
                             UserId = 1L
                         });
                 });
@@ -105,8 +102,8 @@ namespace Clop.DAL.Migrations
             modelBuilder.Entity("Clop.Domain.Entity.Profile", b =>
                 {
                     b.HasOne("Clop.Domain.Entity.User", "User")
-                        .WithMany("Profiles")
-                        .HasForeignKey("UserId")
+                        .WithOne("Profile")
+                        .HasForeignKey("Clop.Domain.Entity.Profile", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -115,7 +112,8 @@ namespace Clop.DAL.Migrations
 
             modelBuilder.Entity("Clop.Domain.Entity.User", b =>
                 {
-                    b.Navigation("Profiles");
+                    b.Navigation("Profile")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
