@@ -22,6 +22,6 @@ public class UserService : IUserService
 
         var profiles = user.Profiles;
 
-        throw new NotImplementedException(); 
+        throw new NotImplementedException();
     }
 }
